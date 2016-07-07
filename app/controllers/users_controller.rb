@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-	 @user = User.find(params[:id])
+	  @user = User.find(params[:id])
   end
 
   def update
@@ -35,33 +35,28 @@ class UsersController < ApplicationController
   	redirect_to :back
   end 
 
-  def signin
-    @user = User.all
-    # @user = User.where(name: params[:name]).first  #.first to get rid of array
-    if @user && @user.age == params[:age]
-      session[:user_id] = @user.id
-      redirect "/"
-  else
-      flash[:error] = "You need a valid sign-in to be Glittr'ed :("
+  def signinform
+    @user = User.where(name: params[:name]).first
   end
-end
 
+  def signin
+    # @user = User.all
+    @user = User.where(name: params[:name]).first  #.first to get rid of array
+    if @user && @user.password == params[:password]
+      session[:user_id] = @user.id
+      flash[:notice] = "Yay you signed in :)"
+      redirect_to "/"
+    else
+      flash[:error] = "You need a valid sign-in :("
+      redirect_to "/users/signinform"
+    end
+  end
 
-  # def show
-  # end
-
-  # def users
-  # end
-
-  # def post
-  # 	@post = Post.new
-  # end
-
-  # def createpost
-  # 	Post.create(body: params[:post][:body])
-  # 	redirect_to :back
-  # end
-
+  def signout
+    session[:user_id] = nil
+    flash[:notice] = "You have signed out. Come back soon for more Tumblr."
+    redirect_to "/"
+  end
   # def comment
   # end
 

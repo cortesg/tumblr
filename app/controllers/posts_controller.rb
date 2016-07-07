@@ -13,9 +13,11 @@ class PostsController < ApplicationController
   def create
     # @post = Post.create
     
-		Post.create(body: params[:post][:body])
-		# if @r 
-		# 	flash[:alert] = "yaydsfasdfasdf"
+		Post.create(
+      body: params[:post][:body],
+      user_id: session[:user_id]
+      )
+		flash[:alert] = "You have posted."
 		redirect_to :back
 		# end
   end

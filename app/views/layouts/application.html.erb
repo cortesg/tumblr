@@ -9,7 +9,19 @@
   </head>
 
 	<h1>Welcome to Tumblr!</h1>
+  <nav>
+    <!-- not sure how to use link_to syntax -->
+    <a href="/">Home</a>
+    <a href="/users/new">Sign Up</a>
+    <a href="/users/signinform">Sign In</a>
+    <a href="/posts">All Posts</a>
+    <a href="/posts/new">New Post</a>
+    <a href="/users/signout">Sign Out</a>
+
+
+  </nav>
     <%= flash[:notice] if flash[:notice] %> 
+    <%= flash[:error] if flash[:error] %>
     <%= flash[:alert] if flash[:alert] %>
     
   <body>
