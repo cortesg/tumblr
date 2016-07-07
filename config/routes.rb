@@ -22,6 +22,9 @@ Rails.application.routes.draw do
 
   get 'users/signout' => 'users#signout'
   post 'users/signout' => 'users#signout'
+
+  get '/comments' => 'comments#new'
+  post '/comments' => 'comments#create'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, :posts, :comments

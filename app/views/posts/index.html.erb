@@ -5,9 +5,9 @@
 		<div id= "test">  <!-- <span> -->
 			<%= post.user.name %>
 		</div>
-
-
-		Post: <%= post.body %> 
-		| Created at: <%= post.created_at %>
+		<strong>Post:</strong> <%= post.body %> 
+		| <strong>Created at:</strong> <%= post.created_at %>
+		| <strong>User Comments:</strong> <%= post.comments %>
+		<a href="/comments">Comment</a>
 	</p>
 <% end %>
