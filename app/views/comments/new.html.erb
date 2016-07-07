@@ -1,8 +1,9 @@
+<h1>Create a Comment</h1>
 
-<div id="commentform">
+<div> <!-- id="commentform" -->
 	<%= form_for @comment do |form| %>   <!-- form for generates new form -->
 		<%= form.text_field :body %>
-		 <!-- <%= form.hidden_field (colon)post_id, value(colon) @post.id%> -->
+		 <!-- bracket form.hidden_field (colon)post_id, value(colon) @post.id bracket -->
 		<%= form.submit %>
 	<% end %>
 </div>

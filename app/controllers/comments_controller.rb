@@ -15,14 +15,12 @@ class CommentsController < ApplicationController
       # @user = User.find(session[:user_id])
       # @post = Post.find(params[:id])
 		  @comment = Comment.create(comment_params)
-
-
         # body: params[:post][:body],
         # post_id: session[:post_id],
         # user_id: session[:user_id]
         # )
-      flash[:notice] = "You have comment."
-      redirect_to post_path
+      flash[:notice] = "You have commented."
+      redirect_to "/posts"
   #   else 
   #     render "posts"
 		# end
