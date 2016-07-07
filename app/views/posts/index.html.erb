@@ -7,7 +7,7 @@
 		</div>
 		<strong>Post:</strong> <%= post.body %> 
 		| <strong>Created at:</strong> <%= post.created_at %>
-		| <strong>User Comments:</strong> <%= post.comments %>
+		| <strong>User Comments:</strong> <%= post.user.comments %>
 		<a href="/comments">Comment</a>
 	</p>
 <% end %>
