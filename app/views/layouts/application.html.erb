@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tumblr</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+	<h1>Welcome to Tumblr!</h1>
+    <%= flash[:notice] if flash[:notice] %> 
+    <%= flash[:alert] if flash[:alert] %>
+    
+  <body>
+    <%= yield %>
+  </body>
+</html>
