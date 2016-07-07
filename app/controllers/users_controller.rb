@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   		# if @r 
   		# 	flash[:alert] = "yaydsfasdfasdf"
       end
-		redirect_to :back
+		redirect_to "/users/signinform"
 		# end
   end
 
