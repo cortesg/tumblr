@@ -1,19 +1,4 @@
 
-<!-- post_content to allow for styling -->
-<div id="post_content">
-  <!-- show title, date/time and body of post -->
-  <h1 class="title">
-    <%= @post.title %>
-  </h1>
-
-  <p class="date">
-    <!-- will show submitted time... and grab post -->
-    Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-    <!-- this will add ability to edit a post -->
-    | <%= link_to 'Edit', edit_post_path(@post) %>
-    <!-- this will add ability to delete/destroy a post -->
-    | <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %> 
-  </p>
 
   <p class="body">
   <%= @post.body %>
@@ -25,7 +10,7 @@
     <!-- this is grabbing _comments.html.erb -->
     <%= render @post.comments %>
     <!-- this is grabbing _form.html.erb -->
-    <h3> Add a comment: </h3>
+    <h3> Create comment: </h3>
     <%= render "comments/form" %> 
   </div>
 

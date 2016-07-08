@@ -2,7 +2,6 @@
   <!-- in each comment there will be content, body, time -->
   <div class="comment_content">
     <!-- looping through each comment for comment.name comment.body and comment.created_at -->
-    <p class="comment_name"><strong><%= comment.name %></strong></p>
     <p class="comment_body"><%= comment.body %></p>
     <p class="comment_time"><%= time_ago_in_words(comment.created_at) %> Ago </p>
   </div>

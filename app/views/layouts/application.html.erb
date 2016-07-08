@@ -11,14 +11,19 @@
 	<h1>Welcome to Tumblr!</h1>  
   <nav>
     <!-- not sure how to use link_to syntax -->
-    <a href="/">Home</a>
     <% if session[:user_id] %>
-      <a href="/posts">All Posts</a>
-      <a href="/posts/new">New Post</a>
-      <a href="/users/signout">Sign Out</a>
+      <div id="homenavin">
+        <a href="/">Home</a>
+        <a href="/posts">All Posts</a>
+        <a href="/posts/new">New Post</a>
+        <a href="/users/signout">Sign Out</a>
+      </div>
     <% else %>
-      <a href="/users/new">Sign Up</a>
-      <a href="/users/signinform">Sign In</a>
+      <div id="homenavout">
+        <a href="/">Home</a>
+        <a href="/users/new">Sign Up</a>
+        <a href="/users/signinform">Sign In</a>
+      </div>
     <% end %>
   </nav>
     <%= flash[:notice] if flash[:notice] %> 
