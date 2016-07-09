@@ -1,7 +1,10 @@
-<h1>All Users</h1>
+<div id="container">	
+	<h1>All Users</h1>
 
-<% @users.each do |user| %>
-	<p>User: <%= user.name %></p>
-	<p>Age: <%= user.age %></p>
-<% end %>
-
+	<% @users.each do |user| %>
+		<div id="home_user">
+			<p>User: <%= user.name %></p>
+			<p>Age: <%= user.age %></p>
+		</div>
+	<% end %>
+</div>

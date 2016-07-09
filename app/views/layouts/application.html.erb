@@ -8,7 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-	<h1>Welcome to Tumblr!</h1>  
+  <body>
+
   <nav>
     <!-- not sure how to use link_to syntax -->
     <% if session[:user_id] %>
@@ -20,16 +21,20 @@
       </div>
     <% else %>
       <div id="homenavout">
-        <a href="/">Home</a>
-        <a href="/users/new">Sign Up</a>
+        <!-- <a href="/">Home</a> --> <%= link_to 'Home', users_path %>
+        <!-- <a href="/users/new">Sign Up</a>  --> <%= link_to 'Sign Up', new_user_path, :id => "yo" %>
         <a href="/users/signinform">Sign In</a>
       </div>
     <% end %>
   </nav>
-    <%= flash[:notice] if flash[:notice] %> 
+
+  <h1 id="welcome">Welcome to Tumblr!</h1> 
+
+    <div id="notice"><%= flash[:notice] if flash[:notice] %></div>
     <%= flash[:error] if flash[:error] %>
     <%= flash[:alert] if flash[:alert] %>
-  <body>
+    <%= video_tag "clouds.mp4", autoplay: true, loop: true, :class => "fullscreen_bg" %>
+
     <%= yield %>
   </body>
 </html>

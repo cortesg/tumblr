@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
   	@users = User.all
   end
@@ -12,16 +13,12 @@ class UsersController < ApplicationController
       if @user.save
         flash[:notice] = "You signed up don't cha know"
         flash[:color] = "valid"
+        redirect_to "/users/signinform"
       else 
-        flash[:notice] = "Form is invalid."
+        flash[:notice] = "Form is invalid. Please fill out all fields."
         flash[:color] = "invalid"
-  		#name: params[:user][:name], 
-  		#age: params[:user][:age]) # doesn't work
-  		# if @r 
-  		# 	flash[:alert] = "yaydsfasdfasdf"
+        redirect_to "/users/new"
       end
-		redirect_to "/users/signinform"
-		# end
   end
 
   def edit
@@ -40,8 +37,7 @@ class UsersController < ApplicationController
   end
 
   def signin
-    # @user = User.all
-    @user = User.where(name: params[:name]).first  #.first to get rid of array
+    @user = User.where(name: params[:name]).first     #.first to get rid of array
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
       flash[:notice] = "Yay you signed in :)"
@@ -57,7 +53,5 @@ class UsersController < ApplicationController
     flash[:notice] = "You have signed out. Come back soon for more Tumblr."
     redirect_to "/"
   end
-  # def comment
-  # end
-
+  
 end

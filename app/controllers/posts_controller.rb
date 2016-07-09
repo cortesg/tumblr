@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def index
   	@posts = Post.all
     @comments = Comment.all
@@ -10,7 +11,6 @@ class PostsController < ApplicationController
 
   def new
 	  @post = Post.new
-    # @user = User.find(session[:user_id])
   end
 
   def create
@@ -18,16 +18,13 @@ class PostsController < ApplicationController
     # if User.find(session[:user_id]).first == nil  #this line isn't working.
     #   flash[:alert] = "Please sign in."
     # else
-      @user = User.find(session[:user_id])
-    	@p = Post.create(
-        body: params[:post][:body],
-        user_id: session[:user_id]
-        )
-      flash[:alert] = "You have posted."
-      redirect_to "/posts"
-  #   else 
-  #     render "posts"
-		# end
+    @user = User.find(session[:user_id])
+    @p = Post.create(
+      body: params[:post][:body],
+      user_id: session[:user_id]
+      )
+    flash[:alert] = "You have posted."
+    redirect_to "/posts"
   end
 
   def edit
@@ -39,4 +36,5 @@ class PostsController < ApplicationController
   	@post.update(body: params[:post][:body])
   	redirect_to :back
   end 
+
 end
