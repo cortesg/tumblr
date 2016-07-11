@@ -1,7 +1,15 @@
 <p>User: <%= @user.name %></p>
 <p>Age: <%= @user.age %></p>
 
+<%= link_to "Edit Info", edit_user_path(@user) %> </br>
+
+<%= link_to "Delete Account", user_path(@user), 
+				method: :delete,
+                class: "button",
+                data: {confirm: 'Are you sure you would like to delete your account?'} %>
+
 <% @posts.each do |post| %>
 	<p><strong>Post:</strong> <%= link_to post.body, post %>
 	| <strong>Created at:</strong> <%= post.created_at %></p>
 <% end %>
+

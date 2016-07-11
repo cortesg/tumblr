@@ -21,6 +21,17 @@ class UsersController < ApplicationController
       end
   end
 
+  def delete
+  end
+
+  def destroy
+    @user = User.find(session[:user_id])
+    @post = @user.posts
+    @post.destroy_all
+    @user.destroy
+    redirect_to users_signout_path
+  end
+
   def edit
 	  @user = User.find(params[:id])
   end
@@ -29,7 +40,7 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	@user.update(name: params[:user][:name])
   	@user.update(age: params[:user][:age])
-  	redirect_to :back
+  	redirect_to user_path
   end 
 
   def signinform
