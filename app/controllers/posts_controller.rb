@@ -33,4 +33,14 @@ class PostsController < ApplicationController
   	redirect_to post_path
   end 
 
+  def delete
+  end
+
+  def destroy
+    @user = User.find(session[:user_id])
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+  end
+
 end
