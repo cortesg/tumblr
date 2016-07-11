@@ -30,13 +30,10 @@
   </nav>
 
   <%= fancy_title("Welcome to Tumblr!") %> 
-  <%= tumblr_anchor %>
-
-    <div id="notice"><%= flash[:notice] if flash[:notice] %></div>
-    <%= flash[:error] if flash[:error] %>
-    <%= flash[:alert] if flash[:alert] %>
-    <%= video_tag "clouds.mp4", autoplay: true, loop: true, :class => "fullscreen_bg" %>
-
+  <div id="notice"><%= flash[:notice] if flash[:notice] %></div>
+      <%= flash[:error] if flash[:error] %>
+      <%= flash[:alert] if flash[:alert] %>
+  <%= video_tag "clouds.mp4", autoplay: true, loop: true, :class => "fullscreen_bg" %>
     <%= yield %>
   </body>
 </html>

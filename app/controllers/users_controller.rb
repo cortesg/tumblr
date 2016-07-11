@@ -15,9 +15,9 @@ class UsersController < ApplicationController
         flash[:color] = "valid"
         redirect_to "/users/signinform"
       else 
-        flash[:notice] = "Form is invalid. Please fill out all fields."
+        flash[:notice] = "Please fill out all fields with valid info. Age must be an integer and Password must have at least 4 characters."
         flash[:color] = "invalid"
-        redirect_to "/users/new"
+        redirect_to new_user_path  #"/users/new"
       end
   end
 
@@ -41,17 +41,17 @@ class UsersController < ApplicationController
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
       flash[:notice] = "Yay you signed in :) Welcome #{@user.name}!"
-      redirect_to "/posts"
+      redirect_to posts_path #"/posts"
     else
       flash[:notice] = "You need a valid sign-in :("
-      redirect_to "/users/signinform"
+      redirect_to users_signinform_path #"/users/signinform"
     end
   end
 
   def signout
     session[:user_id] = nil
     flash[:notice] = "You have signed out. Come back soon for more Tumblr."
-    redirect_to "/"
+    redirect_to root_path #"/"
   end
   
 end

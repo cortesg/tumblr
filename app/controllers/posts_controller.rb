@@ -14,17 +14,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    # @post = Post.create
-    # if User.find(session[:user_id]).first == nil  #this line isn't working.
-    #   flash[:alert] = "Please sign in."
-    # else
     @user = User.find(session[:user_id])
     @p = Post.create(
       body: params[:post][:body],
       user_id: session[:user_id]
       )
     flash[:alert] = "You have posted."
-    redirect_to "/posts"
+    redirect_to posts_path
   end
 
   def edit
@@ -34,7 +30,7 @@ class PostsController < ApplicationController
   def update
   	@post = Post.find(params[:id])
   	@post.update(body: params[:post][:body])
-  	redirect_to :back
+  	redirect_to post_path
   end 
 
 end
