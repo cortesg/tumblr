@@ -40,10 +40,10 @@ class UsersController < ApplicationController
     @user = User.where(name: params[:name]).first     #.first to get rid of array
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
-      flash[:notice] = "Yay you signed in :)"
-      redirect_to "/"
+      flash[:notice] = "Yay you signed in :) Welcome #{@user.name}!"
+      redirect_to "/posts"
     else
-      flash[:error] = "You need a valid sign-in :("
+      flash[:notice] = "You need a valid sign-in :("
       redirect_to "/users/signinform"
     end
   end

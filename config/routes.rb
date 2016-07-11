@@ -1,24 +1,4 @@
 Rails.application.routes.draw do
-  # get 'posts/index'
-
-  # get 'posts/new'
-
-  # get 'posts/edit'
-
-  # get 'users/index'
-
-  # get 'users/users'
-
-  # get 'users/post'
-
-  # get 'users/comment'
-
-  # get 'users/edit/:id' => 'users#edit'
-
-  # get 'posts/edit/:id' => 'posts#edit'
-
-  # get '/comments' => 'comments#new'
-  # post '/comments' => 'comments#create'
 
   get 'users/signinform' => 'users#signinform'
   post 'users/signin' => 'users#signin'

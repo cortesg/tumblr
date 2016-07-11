@@ -24,10 +24,11 @@ nav {
 a {
 	text-decoration: none;
 	font-size: 24px;
+	color: gray;
 }
 
 a:hover {
-	color: pink;
+	color: orange;
 	text-decoration: none;
 }
 
@@ -55,7 +56,7 @@ a:hover {
 }
 
 #notice {
-	color: pink;
+	color: orange;
 }
 
 #container {
@@ -65,8 +66,12 @@ a:hover {
 #home_user {
 	/*border: 1px solid gray;*/
 	margin-bottom: 5px;
-	width: 30%;
+	width: 100%;
 }
+
+/*#container h1 {
+	text-align: center;
+}*/
 
 #home_user p {
 	/*border: 1px solid gray;*/
