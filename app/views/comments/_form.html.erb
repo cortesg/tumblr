@@ -1,7 +1,7 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
   
   <p>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, placeholder: "(Optional Name): (body content)" %>
   </p>
   <p>
     <%= f.submit %>

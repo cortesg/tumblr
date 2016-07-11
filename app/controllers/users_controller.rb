@@ -67,6 +67,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(session[:user_id])
+    # @link = User.find(params[:id])
     @posts = @user.posts.all.reverse_order! 
   end
 end
