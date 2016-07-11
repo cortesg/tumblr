@@ -1,0 +1,7 @@
+<p>User: <%= @user.name %></p>
+<p>Age: <%= @user.age %></p>
+
+<% @posts.each do |post| %>
+	<p><strong>Post:</strong> <%= link_to post.body, post %>
+	| <strong>Created at:</strong> <%= post.created_at %></p>
+<% end %>

@@ -24,7 +24,7 @@ nav {
 a {
 	text-decoration: none;
 	font-size: 24px;
-	/*color: pink;*/
+	color: indigo;
 }
 
 a:hover {
@@ -90,4 +90,8 @@ em {
 
 #comments_form {
 	color: maroon;
+}
+
+.blue {
+	color: blue;
 }

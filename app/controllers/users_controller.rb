@@ -54,4 +54,8 @@ class UsersController < ApplicationController
     redirect_to root_path #"/"
   end
   
+  def show
+    @user = User.find(session[:user_id])
+    @posts = @user.posts.all.reverse_order! 
+  end
 end

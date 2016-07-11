@@ -17,12 +17,15 @@
   <!-- add comments here -->
   <div id="comments">
     <!-- count the number of comments -->
-    <h2 id="comments_form">
-      <%= @post.comments.count %> 
-      <% if @post.comments.count == 1 %>
-        Comment 
+    
+      <% if @post.comments.count == 0 %>
+        <h2 id="comments_form"><%= @post.comments.count %> Comments</h2>
       <% else %>
-        Comments
+        <% if @post.comments.count == 1 %> 
+          <h2 class="blue"><%= @post.comments.count %> Comment</h2>
+        <% else %>
+          <h2 class="blue"><%= @post.comments.count %> Comments</h2>
+        <% end %>
       <% end %>
     </h2>
     <!-- this is grabbing _comments.html.erb -->
