@@ -1,7 +1,7 @@
 <p>User: <%= @user.name %></p>
 <p>Age: <%= @user.age %></p>
 
-<% if session[:user_id] == user_path(@user) %>
+<% if session[:user_id] == @user.id %>
 <%= link_to "Edit Info", edit_user_path(@user) %> </br>
 
 <%= link_to "Delete Account", user_path(@user), 
