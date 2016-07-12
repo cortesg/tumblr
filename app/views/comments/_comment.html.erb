@@ -7,9 +7,11 @@
   </div>
   <!-- add ability to delete comment in comment but not content -->
   <p>
+    <% if session[:user_id] == @post.user.id %> 
     <%= link_to 'Delete this Comment', [comment.post, comment],
                 method: :delete,
                 class: "button",
                 data: {confirm: 'Are you sure?'} %> 
+    <% end %>
   </p>
 </div>
