@@ -17,7 +17,7 @@
       <div id="homenavin">
         <a href="/">Home</a>
         <a href="/posts">All Posts</a>
-        <a href="/users/[:id]">Profile</a> 
+        <%= link_to "Profile", user_path(User.find(session[:user_id])) %>
         <a href="/posts/new">New Post</a>
         <a href="/users/signout">Sign Out</a>
       </div>

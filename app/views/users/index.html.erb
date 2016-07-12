@@ -4,7 +4,7 @@
 
 	<% @users.each do |user| %>
 		<div id="home_user">
-			<p>User: <%= user.name %></p>
+			<p>User: <%= link_to user.name, user_path(user) %></p>
 			<p>Age: <%= user.age %></p>
 		</div>
 	<% end %>
